@@ -82,11 +82,11 @@ public class StorkDevModeTest {
     @Test
     void shouldEncodeQueryCorrectly() {
         when()
-                .get("/helper/v2/query?foo=bar/bar")
+                .get("/helper/v2/query?foo=cigüeña")
                 .then()
                 .statusCode(200)
                 // The response contains an encoded `/`
-                .body(equalTo("Hello, stork/stork"));
+                .body(equalTo("Hello, this is your query parameter: cigüeña"));
 
     }
 

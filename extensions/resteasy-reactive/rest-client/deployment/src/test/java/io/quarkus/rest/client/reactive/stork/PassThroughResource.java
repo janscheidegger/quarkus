@@ -33,7 +33,7 @@ public class PassThroughResource {
     @Path("/v2/query")
     @GET
     public String invokeClientWithQueryParam(@QueryParam("foo") String foo) {
-        return client.helloWithPathParam(foo);
+        return client.helloWithQueryParam(foo);
     }
 
     @Path("/{name}")

@@ -80,6 +80,17 @@ public class StorkDevModeTest {
     }
 
     @Test
+    void shouldEncodeQueryCorrectly() {
+        when()
+                .get("/helper/v2/query?foo=bar/bar")
+                .then()
+                .statusCode(200)
+                // The response contains an encoded `/`
+                .body(equalTo("Hello, stork/stork"));
+
+    }
+
+    @Test
     void shouldSayHelloNameWithBlank() {
         when()
                 .get("/helper/smallrye stork")

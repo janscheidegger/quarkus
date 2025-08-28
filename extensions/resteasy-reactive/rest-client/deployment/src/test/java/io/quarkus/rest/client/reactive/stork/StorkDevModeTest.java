@@ -85,7 +85,6 @@ public class StorkDevModeTest {
                 .get("/helper/v2/query?foo=cigüeña")
                 .then()
                 .statusCode(200)
-                // The response contains an encoded `/`
                 .body(equalTo("Hello, this is your query parameter: cigüeña"));
 
     }
